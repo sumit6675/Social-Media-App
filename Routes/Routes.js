@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const usersRoute = express.Router();
 const bcrypt = require("bcrypt");
-const { UserModel, PostModel } = require("./Models/Model");
+const { UserModel, PostModel } = require("../Models/Model");
 
 usersRoute.post("/register", async (req, res) => {
   const { name, email, password, dob, bio } = req.body;

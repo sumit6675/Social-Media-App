@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const { connection } = require("./config/db");
-const { usersRoute } = require("./Routes");
+const { usersRoute } = require("./Routes/Routes");
 
 app.use(cors({ origin: "*" }));
 
