@@ -71,7 +71,7 @@ usersRoute.get("/users/:id/friends", async (req, res) => {
     res.status(200).json({ friends });
   } catch (error) {
     console.error(error);
-    res.status(400).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -100,7 +100,7 @@ usersRoute.post("/users/:id/friends", async (req, res) => {
     res.status(201).json({ friends });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -136,7 +136,7 @@ usersRoute.put("/users/:id/friends/:friendId", async (req, res) => {
     res.status(204).json({ message: "Friend request updated successfully" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -146,7 +146,7 @@ usersRoute.get("/posts", async (req, res) => {
     res.status(200).json({ Data: postsData });
   } catch (err) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -167,7 +167,7 @@ usersRoute.post("/posts", async (req, res) => {
     res.status(201).json({ message: "Post created successfully", post: post });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -189,7 +189,7 @@ usersRoute.put("/posts/:id", async (req, res) => {
     res.status(204).json({ message: "Post updated successfully", post: post });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -202,7 +202,7 @@ usersRoute.delete("/posts/:id", async (req, res) => {
     res.status(202).json({ message: "Post deleted successfully", post: post });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    res.status(401).json({ message: "Server error" });
   }
 });
 
@@ -222,7 +222,7 @@ usersRoute.put('/posts/:id/like', async (req, res) => {
     res.json({ message: 'Post liked successfully', post: post });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(401).json({ message: 'Server error' });
   }
 });
 
